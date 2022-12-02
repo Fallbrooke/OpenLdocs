@@ -23,4 +23,4 @@
 
 [Activiti Integration Guide](documentation/OpenL Tablets - Activiti Integration Guide.pdf)
 
-[Maven Plugin Guide](https://openl-tablets.org/files/openl-tablets/5.25.0/OpenL%20Tablets%20-%20Maven%20Plugin%20Guide/)
+[Maven Plugin Guide](https://openl-tablets.org/files/openl-tablets/5.24.0/OpenL%20Tablets%20-%20Maven%20Plugin%20Guide/)
