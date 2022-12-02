@@ -4,7 +4,7 @@ edit_uri: edit/main/docs/
 nav:
   - USER GUIDES: 
     - Installation/demo guides: 
-      - Installation Guide: documentation/guides/installation_guide.md
+      - Installation Guide: documentation/OpenL Tablets - Installation Guide.pdf
       - Demo Package Guide: documentation/guides/demo_package_guide.md
     - For Business Users: 
       - Reference Guide: documentation/guides/reference_guide.md
