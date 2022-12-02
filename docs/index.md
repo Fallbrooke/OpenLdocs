@@ -7,20 +7,20 @@
 
 [Installation Guide](documentation/OpenL Tablets - Installation Guide.pdf)
 
-[Demo Package Guide](documentation/guides/demo_package_guide.md)
+[Demo Package Guide](documentation/guides/OpenL Tablets - Demo Package Guide.pdf)
 
 ### for Business Users:
 
-[Reference Guide](documentation/guides/reference_guide.md)
+[Reference Guide](documentation/OpenL Tablets - Reference Guide)
 
-[WebStudio User Guide](documentation/guides/webstudio_user_guide.md)
+[WebStudio User Guide](documentation/OpenL Tablets - WebStudio User Guide.pdf)
 
 ### for Developers:
 
-[Rule Services Usage and Customization Guide](documentation/guides/rule_services_usage_and_customization_guide.md)
+[Rule Services Usage and Customization Guide](documentation/OpenL Tablets - Rule Services Usage and Customization Guide.pdf)
 
-[Developer Guide](documentation/guides/developer_guide.md)
+[Developer Guide](documentation/OpenL Tablets - Developer Guide.pdf)
 
-[Activiti Integration Guide](ddocumentation/guides/activiti_integration_guide.md)
+[Activiti Integration Guide](ddocumentation/OpenL Tablets - Activiti Integration Guide.pdf)
 
-[Maven Plugin Guide](documentation/guides/maven_plugin_guide.md)
+[Maven Plugin Guide](https://openl-tablets.org/files/openl-tablets/5.25.0/OpenL%20Tablets%20-%20Maven%20Plugin%20Guide/)
