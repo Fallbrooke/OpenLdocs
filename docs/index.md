@@ -7,11 +7,11 @@
 
 [Installation Guide](documentation/OpenL Tablets - Installation Guide.pdf)
 
-[Demo Package Guide](documentation/guides/OpenL Tablets - Demo Package Guide.pdf)
+[Demo Package Guide](documentation/OpenL Tablets - Demo Package Guide.pdf)
 
 ### for Business Users:
 
-[Reference Guide](documentation/OpenL Tablets - Reference Guide)
+[Reference Guide](documentation/OpenL Tablets - Reference Guide.pdf)
 
 [WebStudio User Guide](documentation/OpenL Tablets - WebStudio User Guide.pdf)
 
@@ -21,6 +21,6 @@
 
 [Developer Guide](documentation/OpenL Tablets - Developer Guide.pdf)
 
-[Activiti Integration Guide](ddocumentation/OpenL Tablets - Activiti Integration Guide.pdf)
+[Activiti Integration Guide](documentation/OpenL Tablets - Activiti Integration Guide.pdf)
 
 [Maven Plugin Guide](https://openl-tablets.org/files/openl-tablets/5.25.0/OpenL%20Tablets%20-%20Maven%20Plugin%20Guide/)
