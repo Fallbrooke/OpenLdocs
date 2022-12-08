@@ -1,11 +1,9 @@
 <img src="img/OpenLHome.png" width="700">
 
-## v5.23 User Guides
+## v5.22 User Guides
 User guides for this version are available via the left navigation
 
 ## Previous User Guides
-[v5.22](https://openldocs.readthedocs.io/en/v5.22/)
-
 [v5.21](https://openldocs.readthedocs.io/en/v5.21/)
 
 [v5.20](https://openldocs.readthedocs.io/en/v5.20/)
