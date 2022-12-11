@@ -4,6 +4,69 @@
   order: 0;
 }
 
+p  {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 0px;
+  font-size: 14px;
+  font-family: roboto;
+  }
+
+h2  {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  padding: 0px;
+  font-size: 22px;
+  font-family: roboto;
+  }
+
+.rst-content h2 {
+    margin-bottom: 5px;
+  }
+
+
+
+
+/* set vertical spacing in left nav */
+
+li {
+  margin-top: -5px;
+  margin-bottom: -7px;
+  padding: 0px;
+  }
+
+p.caption {
+  margin-top: -10px;
+  margin-bottom: -10px;
+  padding: 0px;
+  }
+
+.wy-side-nav-search {
+    padding-top: 0px;
+    padding-right: .809em;
+    padding-bottom: 5px;
+    padding-left: .809em;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.wy-side-nav-search .wy-dropdown>a, .wy-side-nav-search>a {
+    font-size: 80%;
+    font-weight: 700;
+    padding: 4px 6px;
+    margin-bottom: 0em;
+}
+
+
+/* below are two descendent selectors */
+.wy-menu-vertical header, .wy-menu-vertical p.caption {
+    height: 25px;
+    line-height: 30px;
+    padding: 0 1.618em;
+    margin: 2px 0 3px;
+    display: block;
+}
+
 /* icon sizing in the left menu */
 .icon-home {
     width: 100px;
@@ -21,9 +84,9 @@
     color: #007aff;
 }
 
-/* Artifex blue color for background elements */
+/* Artifex blue color for background elements. Official EIS light blue is #00a7e1*/
 .wy-side-nav-search, .wy-nav-top {
-    background-color: #007aff;
+    background-color: #00a7e1;
 }
 
 /* Accessibility: ensures that the version number is readable against the background color */
