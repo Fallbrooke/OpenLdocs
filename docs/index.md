@@ -1,9 +1,9 @@
 <img src="img/OpenLHome.png" width="700">
 
 <h2 class="indexpage">v5.26 User Guides</h2>
-<p class="indexpage">User guides for this version are available via the left navigation.</p>
+User guides for this version are available via the left navigation.
 
-<p class="indexpage">HTML guides have links to the GitHub source repository, via which visitors can easily propose documentation updates.</p>
+HTML guides have links to the GitHub source repository, via which visitors can easily propose documentation updates.
 
 <h2 class="indexpage">Previous User Guides</h2>
 
