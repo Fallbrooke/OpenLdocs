@@ -417,7 +417,7 @@ Proceed as follows:
 	chmod +x ./*.sh
 	```
 
-1.  Run the `sturtup.sh` file as follows:
+1.  Run the `startup.sh` file as follows:
 
 	```
 	sh ./startup.sh
