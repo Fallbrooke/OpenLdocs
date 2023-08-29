@@ -121,7 +121,7 @@ This chapter explains logging into OpenL Tablets WebStudio and briefly introduce
 
 To sign in to OpenL Tablets WebStudio, proceed as follows:
 
-1.  In the web browser address bar, enter the OpenL Tablets WebStudio URL provided by the system administrator.
+1.  In a web browser address bar, enter the OpenL Tablets WebStudio URL provided by the system administrator.
     The OpenL Tablets WebStudio URL has the following pattern:
     
     `http://<server>:<port>/webstudio`
