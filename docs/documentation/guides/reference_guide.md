@@ -21,7 +21,7 @@ Basic knowledge of Excel® is required to use this guide effectively. Basic know
 
 ### Related Information
 
-The following table lists sources of information related to contents of this guide:
+The following table lists sources of information related to the contents of this guide:
 
 | Title                                                                                                                                                       | Description                                                                                                               |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
