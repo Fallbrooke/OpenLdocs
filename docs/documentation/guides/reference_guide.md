@@ -2652,9 +2652,42 @@ Pay attention to the row where **Request Date** is 3/10/2012. This date falls in
 
 Context variables can be used as input parameters. It is one more way to define context, in addition to using a `_context_` object or defining a field in a datatype table.
 
+The following syntax is used to define a context variable as input parameters:
+```
+<variable name>:context.<context name>
+```
 An example of using a context variable as an argument is as follows:
 
-![](ref_guide_images/f944d31ac567fdcbe5bb6f9320df3e85.png)
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3" style="text-align:left;font-size:11px;">Spreadsheet PlanContractYearIllustration[] ProjectMasterIllustration (Date calculationDate: context.requestDate, Date policyEffectiveDate:context.currectDate, PlanPremiumAndRate[] plansAndRates</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td  style="text-align:center;font-size:11px;background-color:#a6a6a6;">Step</td>
+      <td  style="text-align:center;font-size:11px;background-color:#b4c7e7;">Formula</td>
+    </tr>
+    <tr>
+      <td  style="text-align:left;font-size:11px;">ProductCd</td>
+      <td  style="text-align:left;font-size:11px;background-color:#dae3f3;">= plansAndRates[0].coverages[select first having coverageType =="Universal Life" or coverageType =="WholeLife"].coverageType</td>
+    </tr>
+    <tr>
+      <td  style="text-align:left;font-size:11px;">SelectPreferedRateCards</td>
+      <td  style="text-align:left;font-size:11px;background-color:#dae3f3;">= MemberDetermination  ( plansAndRates, $ProductCd )</td>
+    </tr>
+    <tr>
+      <td  style="text-align:left;font-size:11px;">PredefinedMemberRecord</td>
+      <td  style="text-align:left;font-size:11px;background-color:#dae3f3;">= MemberConfiguration ( $ProductCd, plansAndRates, calculationCallDate, policyEffectiveDate, deathBenefitOption, doliTestType )</td>
+    </tr>
+    <tr>
+      <td  style="text-align:left;font-size:11px;">RETURN</td>
+      <td  style="text-align:left;font-size:11px;background-color:#dae3f3;">= IllustrationPerPlan ( plansAndRates.planName, $PredefinedMemberRecord, $SelectPreferedRateCards, $ProductCd )</td>
+    </tr>
+  </tbody>
+</table>
 
 *Using a context variable as an input parameter*
 
