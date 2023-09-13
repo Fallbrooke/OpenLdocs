@@ -17,7 +17,9 @@ nav:
   - THE OPENL PROJECT:
     - About OpenL: about.md
   
-theme: readthedocs
+theme: 
+    name: readthedocs
+    navigation_depth: 8
 
 repo_url: https://github.com/EISTW/OpenLdocs/
 
