@@ -1,11 +1,11 @@
-# OpenL Tablets BRMS Installation Guide
+OpenL Tablets BRMS Installation Guide
 
 ```
 Release 5.26
 OpenL Tablets Documentation is licensed under the Creative Commons Attribution 3.0 United States License.
 ```
 
-## Preface
+# Preface
 
 **OpenL Tablets** is a Business Rules Management System (BRMS) based on tables presented in the Microsoft Excel documents. Using unique concepts, OpenL Tablets facilitates treating business documents containing business logic specifications as an executable source code.
 
@@ -21,29 +21,29 @@ All installation and configuration can be done in the `application.properties` f
 
 This section includes the following topics:
 
--   [How This Guide Is Organized](#how-this-guide-is-organized)
--   [Audience](#audience)
--   [Related Information](#related-information)
--   [Typographic Conventions](#typographic-conventions)
+-   [How This Guide Is Organized](ONEONEONEhow-this-guide-is-organized)
+-   [Audience](ONEONEONEaudience)
+-   [Related Information](ONEONEONErelated-information)
+-   [Typographic Conventions](ONEONEONEtypographic-conventions)
 
-### How This Guide Is Organized
+## How This Guide Is Organized
 
 | Section                                                                                                                                                                                     | Description                                                                                                  |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| [Before You Begin](#before-you-begin)                                                                                                                                                      | Lists system requirements for installing and using OpenL Tablets software.                                   |
-| [Install OpenL Tablets WebStudio<br/> under Apache Tomcat](#install-openl-tablets-webstudio-under-apache-tomcat)                                                                                                              | Explains how to install OpenL Tablets WebStudio under Apache Tomcat.                                         |
-| [Deploy OpenL Tablets Rule Services<br/> under Apache Tomcat](#deploy-openl-tablets-rule-services-under-apache-tomcat)                                                                           | Designed for rule developers who need to use business rules as separate web services.                        |
-| [Install OpenL Tablets WebStudio and OpenL <br/>Tablets Rule Services on JBoss Application Server](#install-openl-tablets-webstudio-and-openl-tablets-rule-services-on-jboss-application-server) | Explains how to install OpenL Tablets WebStudio and OpenL Tablets Rule Services on JBoss Application Server. |
-| [OpenL Tablets WebStudio and <br/>Rule Services Integration](#openl-tablets-webstudio-and-rule-services-integration)                                                               | Explains how to set up OpenL Tablets WebStudio and OpenL Tablets Rule Services as an integrated environment. |
-| - [Troubleshooting Notes](#troubleshooting) <br/>- [Frequently Asked Questions](#frequently-asked-questions)                                                                                  | Provide useful information related to OpenL Tablets installation.                                           |
+| [Before You Begin](ONEONEONEbefore-you-begin)                                                                                                                                                      | Lists system requirements for installing and using OpenL Tablets software.                                   |
+| [Install OpenL Tablets WebStudio<br/> under Apache Tomcat](ONEONEONEinstall-openl-tablets-webstudio-under-apache-tomcat)                                                                                                              | Explains how to install OpenL Tablets WebStudio under Apache Tomcat.                                         |
+| [Deploy OpenL Tablets Rule Services<br/> under Apache Tomcat](ONEONEONEdeploy-openl-tablets-rule-services-under-apache-tomcat)                                                                           | Designed for rule developers who need to use business rules as separate web services.                        |
+| [Install OpenL Tablets WebStudio and OpenL <br/>Tablets Rule Services on JBoss Application Server](ONEONEONEinstall-openl-tablets-webstudio-and-openl-tablets-rule-services-on-jboss-application-server) | Explains how to install OpenL Tablets WebStudio and OpenL Tablets Rule Services on JBoss Application Server. |
+| [OpenL Tablets WebStudio and <br/>Rule Services Integration](ONEONEONEopenl-tablets-webstudio-and-rule-services-integration)                                                               | Explains how to set up OpenL Tablets WebStudio and OpenL Tablets Rule Services as an integrated environment. |
+| - [Troubleshooting Notes](ONEONEONEtroubleshooting) <br/>- [Frequently Asked Questions](ONEONEONEfrequently-asked-questions)                                                                                  | Provide useful information related to OpenL Tablets installation.                                           |
 
-### Audience
+## Audience
 
 This guide is mainly targeted at business users and rule experts who define, view, and manage their business rules and rule projects via OpenL Tablets WebStudio. Developers can also use this document to learn how to install and set up OpenL Tablets Rule Services.
 
 Basic knowledge of Java and Apache Tomcat is required to use this guide effectively.
 
-### Related Information
+## Related Information
 
 The following table lists the sources of information related to contents of this guide:
 
@@ -53,7 +53,7 @@ The following table lists the sources of information related to contents of this
 | [OpenL Tablets Reference Guide](https://openldocs.readthedocs.io/en/latest/documentation/guides/reference_guide/)                                                                                                                         | Provides overview of OpenL Tablets technology, as well as its basic concepts and principles.                  |
 | <https://openl-tablets.org/>                                                                                                                                | OpenL Tablets open source project website.                                                                    |
 
-### Typographic Conventions
+## Typographic Conventions
 
 The following styles and conventions are used in this guide:
 
@@ -67,14 +67,14 @@ The following styles and conventions are used in this guide:
 | \< \>                      | Represents placeholder values to be substituted with user specific values.                                                                                                                                                                                                                                                  |
 | Hyperlink                  | Represents a hyperlink. <br/>Clicking a hyperlink displays the information topic or external source.                                                                                                                                                                                                                             |
 
-## Before You Begin
+# Before You Begin
 
 This section lists the system requirements for OpenL Tablets software and introduces OpenL Tablets WebStudio instance properties. The following topics are included:
 
--   [System Requirements for OpenL Tablets Software](#system-requirements-for-openl-tablets-software)
--   [Common Information about OpenL Tablets WebStudio Instances](#common-information-about-openl-tablets-webstudio-instances)
+-   [System Requirements for OpenL Tablets Software](ONEONEONEsystem-requirements-for-openl-tablets-software)
+-   [Common Information about OpenL Tablets WebStudio Instances](ONEONEONEcommon-information-about-openl-tablets-webstudio-instances)
 
-### System Requirements for OpenL Tablets Software
+## System Requirements for OpenL Tablets Software
 
 The following table covers system requirements for installing and running OpenL Tablets software:
 
@@ -91,17 +91,17 @@ The following table covers system requirements for installing and running OpenL 
 
 **Note:** It is highly recommended to avoid using spaces and special characters in paths.
 
-### Common Information about OpenL Tablets WebStudio Instances
+## Common Information about OpenL Tablets WebStudio Instances
 
 This section provides general information about OpenL Tablets WebStudio home directory structure and resources shared among multiple OpenL Tablets WebStudio instances. The following topics are included:
 
--   [OpenL Tablets WebStudio Home Directory Configuration](#openl-tablets-webstudio-home-directory-configuration)
--   [Starting OpenL Tablets WebStudio in the Cluster Mode](#starting-openl-tablets-webstudio-in-the-cluster-mode)
--   [Sharing webstudio.properties](#sharing-webstudioproperties)
--   [Sharing Project History](#sharing-project-history)
--   [Sharing Project Index](#sharing-project-index)
+-   [OpenL Tablets WebStudio Home Directory Configuration](ONEONEONEopenl-tablets-webstudio-home-directory-configuration)
+-   [Starting OpenL Tablets WebStudio in the Cluster Mode](ONEONEONEstarting-openl-tablets-webstudio-in-the-cluster-mode)
+-   [Sharing webstudio.properties](ONEONEONEsharing-webstudioproperties)
+-   [Sharing Project History](ONEONEONEsharing-project-history)
+-   [Sharing Project Index](ONEONEONEsharing-project-index)
 
-#### OpenL Tablets WebStudio Home Directory Configuration
+### OpenL Tablets WebStudio Home Directory Configuration
 
 When OpenL Tablets WebStudio is run for the first time, by default `${user.home}/.openl `is used as the `openl.home` or `OPENL_HOME` directory where the application is deployed.
 
@@ -141,7 +141,7 @@ An example of the `openl.home` folder contents is as follows:
 
 This option is not available if OpenL Tablets WebStudio is installed using the installation wizard. In this case, `openl.home.shared` is set equal to `openl.home` and it cannot be modified in the installation wizard.
 
-#### Starting OpenL Tablets WebStudio in the Cluster Mode
+### Starting OpenL Tablets WebStudio in the Cluster Mode
 
 To start OpenL Tablets WebStudio in the cluster mode, the `openl.home.shared` or `OPENL_HOME_SHARED` property must be defined properly. In the cluster mode, the same file storage can be used for multiple OpenL Tablets WebStudio instances.
 
@@ -149,37 +149,37 @@ To start OpenL Tablets WebStudio in the cluster mode, the `openl.home.shared` or
 
 *Multiple OpenL Tablets WebStudio instances sharing the same drive*
 
-#### Sharing webstudio.properties
+### Sharing webstudio.properties
 
 `webstudio.properties` can be shared among multiple instances of OpenL Tablets WebStudio. If the `openl.home.shared` path is added to `application.properties` before starting OpenL Tablets WebStudio, and it differs from the `openl.home` path, a separate folder is created for storing `webstudio.properties` file and administrative settings can be shared among several instances of OpenL Tablets WebStudio that have one `openl.home.shared` path.
 
 `webstudio.properties` contents can be modified by OpenL Tablets WebStudio when saving settings.
 
-#### Sharing Project History
+### Sharing Project History
 
 Project history can be shared among multiple instances of OpenL Tablets WebStudio.
 
 It is stored in user workspace, in the `openl.home.shared` folder if set up so before launching OpenL Tablets WebStudio. Thus, users can view project history from different OpenL Tablets WebStudio instances.
 
-#### Sharing Project Index
+### Sharing Project Index
 
 Project index can be shared among multiple instances of OpenL Tablets WebStudio to support work with the Git non-flat structure repository from different OpenL Tablets WebStudio instances. The `openl-projects.yaml` file that contains a list of projects and their paths is now stored in `repositories\settings\design` of the `openl.home.shared` folder, or `openl.home` if the shared folder is not configured.
 
-## Install OpenL Tablets WebStudio under Apache Tomcat
+# Install OpenL Tablets WebStudio under Apache Tomcat
 
 This section describes how to set up the environment for working with OpenL Tablets software and deploy OpenL Tablets WebStudio under Apache Tomcat and provides information about settings required for proper functioning of the application.
 
 Perform the following steps:
 
--   [Installing JDK](#installing-jdk)
--   [Installing Apache Tomcat](#installing-apache-tomcat)
--   [Deploying OpenL Tablets WebStudio](#deploying-openl-tablets-webstudio)
--   [Configuring External User Database](#configuring-external-user-database)
--   [Setting Up OpenL Tablets WebStudio with Installation Wizard](#setting-up-openl-tablets-webstudio-with-installation-wizard)
--   [Integration with External Identify Providers](#integration-with-external-identity-providers)
--   [OpenL Tablets WebStudio Customization](#openl-tablets-webstudio-customization)
+-   [Installing JDK](ONEONEONEinstalling-jdk)
+-   [Installing Apache Tomcat](ONEONEONEinstalling-apache-tomcat)
+-   [Deploying OpenL Tablets WebStudio](ONEONEONEdeploying-openl-tablets-webstudio)
+-   [Configuring External User Database](ONEONEONEconfiguring-external-user-database)
+-   [Setting Up OpenL Tablets WebStudio with Installation Wizard](ONEONEONEsetting-up-openl-tablets-webstudio-with-installation-wizard)
+-   [Integration with External Identify Providers](ONEONEONEintegration-with-external-identity-providers)
+-   [OpenL Tablets WebStudio Customization](ONEONEONEopenl-tablets-webstudio-customization)
 
-### Installing JDK
+## Installing JDK
 
 To install JDK, perform the following steps:
 
@@ -229,21 +229,21 @@ To install JDK, perform the following steps:
 	
 	    `export PATH=$PATH:$JAVA_HOME/bin`.
 
-### Installing Apache Tomcat
+## Installing Apache Tomcat
 
 Apache Tomcat can be installed from a ZIP file or using Windows Service Installer. The following topics are included in this section:
 
--   [Installing Apache Tomcat on Windows](#installing-apache-tomcat-on-windows)
--   [Installing Apache Tomcat on UNIX / Linux Machine](#installing-apache-tomcat-on-unix-linux-machine)
+-   [Installing Apache Tomcat on Windows](ONEONEONEinstalling-apache-tomcat-on-windows)
+-   [Installing Apache Tomcat on UNIX / Linux Machine](ONEONEONEinstalling-apache-tomcat-on-unix-linux-machine)
 
-#### Installing Apache Tomcat on Windows
+### Installing Apache Tomcat on Windows
 
 This section describes how to install Apache Tomcat on Windows and includes the following topics:
 
--   [Installing Apache Tomcat from Zip File](#installing-apache-tomcat-from-zip-file)
--   [Installing Apache Tomcat Using Windows Service Installer](#installing-apache-tomcat-using-windows-service-installer)
+-   [Installing Apache Tomcat from Zip File](ONEONEONEinstalling-apache-tomcat-from-zip-file)
+-   [Installing Apache Tomcat Using Windows Service Installer](ONEONEONEinstalling-apache-tomcat-using-windows-service-installer)
 
-##### Installing Apache Tomcat from Zip File
+#### Installing Apache Tomcat from Zip File
 
 To install Apache Tomcat 9.0.x, proceed as follows:
 
@@ -263,12 +263,12 @@ To install Apache Tomcat 9.0.x, proceed as follows:
 	<Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" URIEncoding="UTF-8"/>
 	```
 
-##### Installing Apache Tomcat Using Windows Service Installer
+#### Installing Apache Tomcat Using Windows Service Installer
 
 This section describes how to install Apache Tomcat using Windows Service Installer.
 
 !!! note
-	It is not recommended to select this type of installation if planning to edit rule tables in Excel files from OpenL Tablets WebStudio as described in [OpenL Tablets WebStudio User Guide > Modifying Tables](https://openldocs.readthedocs.io/en/latest/documentation/guides/webstudio_user_guide/#modifying-tables) section. This type of installation requires additional setup. To solve this issue, contact your OpenL Tablets administrator.
+	It is not recommended to select this type of installation if planning to edit rule tables in Excel files from OpenL Tablets WebStudio as described in [OpenL Tablets WebStudio User Guide > Modifying Tables](https://openldocs.readthedocs.io/en/latest/documentation/guides/webstudio_user_guide/ONEONEONEmodifying-tables) section. This type of installation requires additional setup. To solve this issue, contact your OpenL Tablets administrator.
 
 !!! note
 	For OpenL Tablets administrator: to enable editing rule tables in Excel files from OpenL Tablets WebStudio, enable the **Allow** service to interact with desktop Tomcat service option using MMC or from the command line.
@@ -321,17 +321,17 @@ Proceed as follows:
 
 	Alternatively, Tomcat can be restarted from the **General** tab in the **Apache Tomcat Properties** window which appears after selecting **Start \> All Programs \> Apache Tomcat 9.0 \> Configure Tomcat**.
 
-From this point, OpenL Tablets WebStudio can be run as described in [Deploying OpenL Tablets WebStudio](#deploying-openl-tablets-webstudio).
+From this point, OpenL Tablets WebStudio can be run as described in [Deploying OpenL Tablets WebStudio](ONEONEONEdeploying-openl-tablets-webstudio).
 
-#### Installing Apache Tomcat on UNIX / Linux Machine
+### Installing Apache Tomcat on UNIX / Linux Machine
 
 This section describes how to install Apache Tomcat on the UNIX or Linux machine and includes the following topics:
 
--   [Installing Apache Tomcat from Repository](#installing-apache-tomcat-from-repository)
--   [Installing Apache Tomcat from ZIP File](#installing-apache-tomcat-from-zip-file_1)
--   [Configuring JVM Options for Tomcat on UNIX / Linux Machine](#configuring-jvm-options-for-tomcat-on-unix-linux-machine)
+-   [Installing Apache Tomcat from Repository](ONEONEONEinstalling-apache-tomcat-from-repository)
+-   [Installing Apache Tomcat from ZIP File](ONEONEONEinstalling-apache-tomcat-from-zip-file_1)
+-   [Configuring JVM Options for Tomcat on UNIX / Linux Machine](ONEONEONEconfiguring-jvm-options-for-tomcat-on-unix-linux-machine)
 
-##### Installing Apache Tomcat from Repository
+#### Installing Apache Tomcat from Repository
 
 This section describes how to install Apache Tomcat from repository as a service on Ubuntu 12.x.
 
@@ -368,7 +368,7 @@ Proceed as follows:
 
 	sudo /etc/init.d/tomcat7 stop
 
-##### Installing Apache Tomcat from ZIP File
+#### Installing Apache Tomcat from ZIP File
 
 This section describes how to install Apache Tomcat on Ubuntu 12.04 and Centos 6.3. The instructions are valid for other Linux distributions with small changes.
 
@@ -429,7 +429,7 @@ Proceed as follows:
 
 	If the installation is completed successfully, the Apache Tomcat welcome screen appears. The next thing to be done is to configure JVM options for Tomcat.
 
-##### Configuring JVM Options for Tomcat on UNIX / Linux Machine
+#### Configuring JVM Options for Tomcat on UNIX / Linux Machine
 
 To configure JVM options for Tomcat on a UNIX / Linux machine, proceed as follows:
 
@@ -443,18 +443,18 @@ To configure JVM options for Tomcat on a UNIX / Linux machine, proceed as follow
 
 	`<Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" URIEncoding="UTF-8"/>`
 
-1.  From this point, deploy OpenL Tablets WebStudio as described in [Deploying OpenL Tablets WebStudio](#deploying-openl-tablets-webstudio).
+1.  From this point, deploy OpenL Tablets WebStudio as described in [Deploying OpenL Tablets WebStudio](ONEONEONEdeploying-openl-tablets-webstudio).
 
-### Deploying OpenL Tablets WebStudio
+## Deploying OpenL Tablets WebStudio
 
 This section describes how to deploy and run OpenL Tablets WebStudio under Tomcat.
 
 The following topics are included:
 
--   [Deploying OpenL Tablets WebStudio on a Windows Machine](#deploying-openl-tablets-webstudio-on-a-windows-machine)
--   [Deploying OpenL Tablets WebStudio on a Linux Machine and Mac](#deploying-openl-tablets-webstudio-on-a-linux-machine-and-mac)
+-   [Deploying OpenL Tablets WebStudio on a Windows Machine](ONEONEONEdeploying-openl-tablets-webstudio-on-a-windows-machine)
+-   [Deploying OpenL Tablets WebStudio on a Linux Machine and Mac](ONEONEONEdeploying-openl-tablets-webstudio-on-a-linux-machine-and-mac)
 
-#### Deploying OpenL Tablets WebStudio on a Windows Machine
+### Deploying OpenL Tablets WebStudio on a Windows Machine
 
 This section describes how to deploy and run OpenL Tablets WebStudio under Tomcat on a Windows machine.
 
@@ -468,7 +468,7 @@ Proceed as follows:
 
 1.  Run Tomcat as follows:
 	-   If Tomcat is installed from the ZIP file, in `TOMCAT_HOME\bin,` click the `startup.bat` file`.`
-	-   If Tomcat is installed using Windows Service Installer, restart Tomcat as described in [Installing Apache Tomcat Using Windows Service Installer](#installing-apache-tomcat-using-windows-service-installer).
+	-   If Tomcat is installed using Windows Service Installer, restart Tomcat as described in [Installing Apache Tomcat Using Windows Service Installer](ONEONEONEinstalling-apache-tomcat-using-windows-service-installer).
 
 	Tomcat unpacks the WAR file into the `<TOMCAT_HOME>\webapps\<war file name>` folder. For example, for 5.9.4 version the target folder can be `<TOMCAT_HOME>\webapps\openl-tablets-webstudio-5.9.4`. For convenience, the folder can be renamed as needed but remember that this name is used to launch OpenL Tablets WebStudio under Tomcat.
 
@@ -480,11 +480,11 @@ Proceed as follows:
 
 	That is, for this example, the URL is *http://localhost:8080/openl-tablets-webstudio-5.9.4*.
 
-	OpenL Tablets WebStudio is opened in the browser on the **Welcome to Installation Wizard** page. The wizard will guide through the setup process as described in [Setting Up OpenL Tablets WebStudio with Installation Wizard](#setting-up-openl-tablets-webstudio-with-installation-wizard). When setup is complete, use OpenL Tablets WebStudio to create new projects or download existing ones.
+	OpenL Tablets WebStudio is opened in the browser on the **Welcome to Installation Wizard** page. The wizard will guide through the setup process as described in [Setting Up OpenL Tablets WebStudio with Installation Wizard](ONEONEONEsetting-up-openl-tablets-webstudio-with-installation-wizard). When setup is complete, use OpenL Tablets WebStudio to create new projects or download existing ones.
 
 1.  After a new release of the OpenL Tablets WebStudio is installed, click **CTRL**+**F5** or clear cookies and cash manually to reload the page in the browser.
 
-#### Deploying OpenL Tablets WebStudio on a Linux Machine and Mac
+### Deploying OpenL Tablets WebStudio on a Linux Machine and Mac
 
 To install OpenL Tablets WebStudio under Linux and Mac OS, perform the following steps:
 
@@ -531,9 +531,9 @@ To install OpenL Tablets WebStudio under Linux and Mac OS, perform the following
 
 	If encountering any problems, for more information, see the following log files: `home/myuser/<TOMCAT_HOME>/logs/catalina.out `and `home/myuser//<TOMCAT_HOME>/logs/webstudio.log`
 
-### Configuring External User Database
+## Configuring External User Database
 
-This step is only required if a user is planning to work in multi-user application modes such as Multi-user, Active Directory, SSO: CAS, SSO: SAML, or SSO:OAuth2. For more information, see [Setting Up OpenL Tablets WebStudio with Installation Wizard](#setting-up-openl-tablets-webstudio-with-installation-wizard) and use an external database such as MySQL for managing users in OpenL Tablets WebStudio.
+This step is only required if a user is planning to work in multi-user application modes such as Multi-user, Active Directory, SSO: CAS, SSO: SAML, or SSO:OAuth2. For more information, see [Setting Up OpenL Tablets WebStudio with Installation Wizard](ONEONEONEsetting-up-openl-tablets-webstudio-with-installation-wizard) and use an external database such as MySQL for managing users in OpenL Tablets WebStudio.
 
 By default, OpenL Tablets WebStudio can run using an internal user database based on the H2 database engine. It is a good idea to use the internal user database for demonstration purposes because it is provided by default and requires no additional setup. But in this case, all user management changes will be lost after server restart.
 
@@ -543,12 +543,12 @@ In a production environment, it is strongly recommended to use an external datab
 
 The following topics are included:
 
--   [Adding Drivers and Installing and Configuring the Database](#adding-drivers-and-installing-and-configuring-the-database)
--   [Configuring MySQL Database as External User Storage](#configuring-mysql-database-as-external-user-storage)
--   [Configuring MariaDB Database as External User Storage](#configuring-mariadb-database-as-external-user-storage)
--   [Configuring Oracle Database as External User Storage](#configuring-oracle-database-as-external-user-storage)
+-   [Adding Drivers and Installing and Configuring the Database](ONEONEONEadding-drivers-and-installing-and-configuring-the-database)
+-   [Configuring MySQL Database as External User Storage](ONEONEONEconfiguring-mysql-database-as-external-user-storage)
+-   [Configuring MariaDB Database as External User Storage](ONEONEONEconfiguring-mariadb-database-as-external-user-storage)
+-   [Configuring Oracle Database as External User Storage](ONEONEONEconfiguring-oracle-database-as-external-user-storage)
 
-#### Adding Drivers and Installing and Configuring the Database
+### Adding Drivers and Installing and Configuring the Database
 
 Before configuration, perform the following steps:
 
@@ -564,7 +564,7 @@ Before configuration, perform the following steps:
 	| MS SQL     | `mssql-jdbc-7.2.2.jre8.jar`       |
 	| PostgreSQL | `postgresql-9.3-1100.jdbc4.jar`   |
 
-	For more information on URL value according to the database type, see the **URL value according to the database type** table in [Setting Up OpenL Tablets WebStudio with Installation Wizard](#setting-up-openl-tablets-webstudio-with-installation-wizard).
+	For more information on URL value according to the database type, see the **URL value according to the database type** table in [Setting Up OpenL Tablets WebStudio with Installation Wizard](ONEONEONEsetting-up-openl-tablets-webstudio-with-installation-wizard).
 
 1.  Install the database, defining login and password and creating a new schema or service.
 
@@ -604,7 +604,7 @@ Before configuration, perform the following steps:
 		-   OPENL_PROJECT_TAGS
 		-   OPENL_TAG_TEMPLATES
 
-#### Configuring MySQL Database as External User Storage
+### Configuring MySQL Database as External User Storage
 
 This section explains how to set up a MySQL database. Proceed as follows:
 
@@ -637,7 +637,7 @@ This section explains how to set up a MySQL database. Proceed as follows:
 
 	`GRANT ALL PRIVILEGES ON openl.* TO openl_user;`
 
-#### Configuring MariaDB Database as External User Storage
+### Configuring MariaDB Database as External User Storage
 
 This section explains how to set up an MariaDB database. Proceed as follows:
 
@@ -668,7 +668,7 @@ This section explains how to set up an MariaDB database. Proceed as follows:
 
 1.  Click **Open** and save the changes.
 
-#### Configuring Oracle Database as External User Storage
+### Configuring Oracle Database as External User Storage
 
 This section explains how to set up an Oracle database. Proceed as follows:
 
@@ -691,7 +691,7 @@ This section explains how to set up an Oracle database. Proceed as follows:
 
 1.  Enter username and password values defined when installing the database.
 
-### Setting Up OpenL Tablets WebStudio with Installation Wizard
+## Setting Up OpenL Tablets WebStudio with Installation Wizard
 
 This topic describes the steps that must be taken after the first run of OpenL Tablets WebStudio under Tomcat. Accept the default options provided by the wizard by clicking **Next** to move to the next step or change the options as required and click **Next** to proceed.
 
@@ -731,12 +731,12 @@ Proceed as follows:
 
 	For more details about how to configure the repository of a specific type, please refer to the corresponding section below:
 
-	-   [Configuring OpenL Tablets WebStudio via JDBC Connection](#configuring-openl-tablets-webstudio-via-jdbc-connection)
-	-   [Configuring OpenL Tablets WebStudio via JNDI Connection](#configuring-openl-tablets-webstudio-via-jndi-connection)
-	-   [Configuring OpenL Tablets WebStudio via Amazon Simple Storage Service](#configuring-openl-tablets-webstudio-via-amazon-simple-storage-service)
-	-   [Connecting to OpenL Tablets WebStudio via Proxy](#connecting-to-openl-tablets-webstudio-via-proxy)
+	-   [Configuring OpenL Tablets WebStudio via JDBC Connection](ONEONEONEconfiguring-openl-tablets-webstudio-via-jdbc-connection)
+	-   [Configuring OpenL Tablets WebStudio via JNDI Connection](ONEONEONEconfiguring-openl-tablets-webstudio-via-jndi-connection)
+	-   [Configuring OpenL Tablets WebStudio via Amazon Simple Storage Service](ONEONEONEconfiguring-openl-tablets-webstudio-via-amazon-simple-storage-service)
+	-   [Connecting to OpenL Tablets WebStudio via Proxy](ONEONEONEconnecting-to-openl-tablets-webstudio-via-proxy)
 
-	For more information on repository security, see [OpenL Tablets WebStudio User Guide > Managing Repository Setting](#managing-repository-settings).
+	For more information on repository security, see [OpenL Tablets WebStudio User Guide > Managing Repository Setting](ONEONEONEmanaging-repository-settings).
 
 1.  Click **Next**.
 2.  Select a user mode as described in the following table:
@@ -751,22 +751,22 @@ Proceed as follows:
 	| SSO: SAML                 | Multiple users can run OpenL Tablets WebStudio using their unique user names. <br/>SAML (Security Assertion Markup Language) supporting Identity Provider server will be used to authenticate and manage user credentials.                                                                                       |
 	| SSO:OAuth2                | Multiple users can run OpenL Tablets WebStudio using their unique user names. <br/>User projects will be located in the './openl-demo/user-workspace/USERNAME' folder. <br/>OAuth2 supporting the identity provider server will be used to authenticate and manage user credentials.                                  |
 
-	For **Active Directory**, **SSO: CAS**, **SSO: SAML,** and **SSO:OAuth2,** user modes proceed as described in [Integration with External Identity Providers](#integration-with-external-identity-providers).
+	For **Active Directory**, **SSO: CAS**, **SSO: SAML,** and **SSO:OAuth2,** user modes proceed as described in [Integration with External Identity Providers](ONEONEONEintegration-with-external-identity-providers).
 
 1.  If **Multi-user**, **Active Directory**, **SSO: CAS**, **SSO: SAML**, or **SSO:OAuth2** mode is selected, in the **Configure database** area that appears, modify the database parameters as follows:
 
 	| Parameter         | Description                                                                                                                               |
 	|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 	| Database URL      | Enter the URL for the selected database.                                                                                                  |
-	| Login / Password  | Username and password specified for the database as defined in [Configuring External User Database](#configuring-external-user-database). |
+	| Login / Password  | Username and password specified for the database as defined in [Configuring External User Database](ONEONEONEconfiguring-external-user-database). |
 
 1.  Click **Finish** to complete setup.
 
     As a result, for the **Demo, Multi-user, Active Directory**, **SSO: CAS**, **SSO: SAML,** and **SSO:OAuth2** modes, the login screen appears for entering user’s credentials to start working with OpenL Tablets WebStudio. If the **openl.home** registry variable is defined, upon OpenL Tablets WebStudio update, after replacing the war file, re-running installation wizard is not required as the fact of configuration is recorded in the system registry. However, if there are multiple instances of OpenL Tablets WebStudio installed on the same computer, OpenL Tablets WebStudio must be run via system properties.
 
-    For a list of users predefined in the **Demo** application mode, see [OpenL Tablets WebStudio User Guide > Managing Users](https://openldocs.readthedocs.io/en/latest/documentation/guides/webstudio_user_guide/#managing-users).
+    For a list of users predefined in the **Demo** application mode, see [OpenL Tablets WebStudio User Guide > Managing Users](https://openldocs.readthedocs.io/en/latest/documentation/guides/webstudio_user_guide/ONEONEONEmanaging-users).
 
-#### Configuring OpenL Tablets WebStudio via JDBC Connection
+### Configuring OpenL Tablets WebStudio via JDBC Connection
 
 Configure design and deployment repositories settings on the second step of OpenL Tablet WebStudio installation wizard as follows:
 
@@ -777,14 +777,14 @@ Configure design and deployment repositories settings on the second step of Open
 
 *Setting up a JDBC connection using the installation wizard*
 
-#### Configuring OpenL Tablets WebStudio via JNDI Connection
+### Configuring OpenL Tablets WebStudio via JNDI Connection
 
 To configure the OpenL Tablets WebStudio via JNDI connection, perform the following steps:
 
--   [Configuring Resources for JNDI Context](#configuring-resources-for-jndi-context)
--   [Configuring Settings in OpenL Tablets WebStudio](#configuring-settings-in-openl-tablets-webstudio)
+-   [Configuring Resources for JNDI Context](ONEONEONEconfiguring-resources-for-jndi-context)
+-   [Configuring Settings in OpenL Tablets WebStudio](ONEONEONEconfiguring-settings-in-openl-tablets-webstudio)
 
-##### Configuring Resources for JNDI Context
+#### Configuring Resources for JNDI Context
 
 Resource settings must be configured before deploying the application. Proceed as follows:
 
@@ -831,7 +831,7 @@ Resource settings must be configured before deploying the application. Proceed a
 
 1.  Save the `context.xml` file.
 
-##### Configuring Settings in OpenL Tablets WebStudio
+#### Configuring Settings in OpenL Tablets WebStudio
 
 Configure design and deployment repositories settings on the second step of OpenL Tablets WebStudio installation wizard as follows:
 
@@ -844,7 +844,7 @@ Configure design and deployment repositories settings on the second step of Open
 
 	*Setting up JNDI connection with installation wizard*
 
-#### Configuring OpenL Tablets WebStudio via Amazon Simple Storage Service
+### Configuring OpenL Tablets WebStudio via Amazon Simple Storage Service
 
 Configure design and deployment repositories settings on the second step of OpenL Tablets WebStudio installation wizard as follows:
 
@@ -860,7 +860,7 @@ Configure design and deployment repositories settings on the second step of Open
 	| Listener period (sec) | The time, in seconds, to wait for the Amazon server to respond.                                                                                                                                   |
 	| Endpoint              | Leave empty for a standard AWS S3 connection. <br/>To connect to the non-standard AWS S3 alternative repository, specify the endpoint.                                                                 |
 
-#### Connecting to OpenL Tablets WebStudio via Proxy
+### Connecting to OpenL Tablets WebStudio via Proxy
 
 The following diagram illustrates how to connect to OpenL Tablets WebStudio via proxy.
 
@@ -868,19 +868,19 @@ The following diagram illustrates how to connect to OpenL Tablets WebStudio via 
 
 *Connecting to OpenL Tablets WebStudio via proxy*
 
-### Integration with External Identity Providers
+## Integration with External Identity Providers
 
 To enhance sign in options for users, a third-party authentication can be established between organization authentication systems and OpenL Tablets WebStudio. After enabling third-party authentication, users can sign into OpenL Tablets using their organizational credentials.
 
 The following topics are included in this section:
 
--   [User Management](#user-management)
--   [Configuring Authentication via Active Directory](#configuring-authentication-via-active-directory)
--   [Configuring Single Sign On via CAS](#configuring-single-sign-on-via-cas)
--   [Configuring Single Sign On via SAML Server](#configuring-single-sign-on-via-saml-server)
--   [Configuring Single Sign On via OAuth2](#configuring-single-sign-on-via-oauth2)
+-   [User Management](ONEONEONEuser-management)
+-   [Configuring Authentication via Active Directory](ONEONEONEconfiguring-authentication-via-active-directory)
+-   [Configuring Single Sign On via CAS](ONEONEONEconfiguring-single-sign-on-via-cas)
+-   [Configuring Single Sign On via SAML Server](ONEONEONEconfiguring-single-sign-on-via-saml-server)
+-   [Configuring Single Sign On via OAuth2](ONEONEONEconfiguring-single-sign-on-via-oauth2)
 
-#### User Management
+### User Management
 
 OpenL Tablets WebStudio allows selecting where user permissions are managed in the case of integration with external identity providers. First of all, administrative users must be defined in the **Configure initial users** section that appears in the third step of the installation wizard. Proceed as follows:
 
@@ -891,7 +891,7 @@ OpenL Tablets WebStudio allows selecting where user permissions are managed in t
 
 	*Configuring initial users*
 
-#### Configuring Authentication via Active Directory
+### Configuring Authentication via Active Directory
 
 This section explains how to set up authentication via Active Directory. Proceed as follows:
 
@@ -902,7 +902,7 @@ This section explains how to set up authentication via Active Directory. Proceed
 
 	*Configuring authentication via Active Directory*
 
-#### Configuring Single Sign On via CAS
+### Configuring Single Sign On via CAS
 
 This section explains how to set up authentication via CAS.
 
@@ -925,14 +925,14 @@ Define the following parameters:
 
 *Configuring CAS*
 
-#### Configuring Single Sign On via SAML Server
+### Configuring Single Sign On via SAML Server
 
 This section describes single sign on configuration via the SAML server and includes the following topics:
 
--   [Configuring SAML via the Installation Wizard](#configuring-saml-via-the-installation-wizard)
--   [Configuring SAML on Azure Kubernetes](#configuring-saml-on-azure-kubernetes)
+-   [Configuring SAML via the Installation Wizard](ONEONEONEconfiguring-saml-via-the-installation-wizard)
+-   [Configuring SAML on Azure Kubernetes](ONEONEONEconfiguring-saml-on-azure-kubernetes)
 
-##### Configuring SAML via the Installation Wizard
+#### Configuring SAML via the Installation Wizard
 
 This section explains how to set up authentication via the SAML server using the installation wizard.
 
@@ -954,7 +954,7 @@ Define the following parameters:
 
 *Configuring SAML*
 
-##### Configuring SAML on Azure Kubernetes
+#### Configuring SAML on Azure Kubernetes
 
 SAML configuration on Azure Kubernetes includes the following steps:
 
@@ -976,9 +976,9 @@ URLs must be accessible by Azure.
 
 OpenL Tablets WebStudio stores information about users and their groups in the database, so there must be a remote database server when OpenL Tablets WebStudio is used in Kubernetes.
 
-In Kubernetes, application configuration is described in the configuration map and installer must not be used. For an example of the configuration, see [Appendix B: OpenL Tablets WebStudio Image Configuration for SAML Under Kubernetes](#appendix-b-openl-tablets-webstudio-image-configuration-for-saml-under-kubernetes).
+In Kubernetes, application configuration is described in the configuration map and installer must not be used. For an example of the configuration, see [Appendix B: OpenL Tablets WebStudio Image Configuration for SAML Under Kubernetes](ONEONEONEappendix-b-openl-tablets-webstudio-image-configuration-for-saml-under-kubernetes).
 
-#### Configuring Single Sign On via OAuth2
+### Configuring Single Sign On via OAuth2
 
 This section explains how to set up authentication via the OAuth2 server using the installation wizard. Define the following parameters:
 
@@ -1007,18 +1007,18 @@ security.oauth2.issuer-uri=https://login.microsoftonline.com/bebd0062-openid-con
 security.oauth2.client-secret=xzB8Q~XxxXx-Secret-key-XxxXxxXxXxxx
 ```
 
-### OpenL Tablets WebStudio Customization
+## OpenL Tablets WebStudio Customization
 
 This section describes additional configuration for OpenL Tablets WebStudio and includes the following topics:
 
--   [Updating User Database Configuration](#updating-user-database-configuration)
--   [Configuring User Mode](#configuring-user-mode)
--   [Configuring Google Analytics](#configuring-google-analytics)
--   [Configuring Private Key for Repository Security](#configuring-private-key-for-repository-security)
+-   [Updating User Database Configuration](ONEONEONEupdating-user-database-configuration)
+-   [Configuring User Mode](ONEONEONEconfiguring-user-mode)
+-   [Configuring Google Analytics](ONEONEONEconfiguring-google-analytics)
+-   [Configuring Private Key for Repository Security](ONEONEONEconfiguring-private-key-for-repository-security)
 
-The changes described in this section can be made in the properties file as described in [OpenL Tablets WebStudio Home Directory Configuration](#openl-tablets-webstudio-home-directory-configuration).
+The changes described in this section can be made in the properties file as described in [OpenL Tablets WebStudio Home Directory Configuration](ONEONEONEopenl-tablets-webstudio-home-directory-configuration).
 
-#### Updating User Database Configuration
+### Updating User Database Configuration
 
 An example of the configuration that can be used for the user database is as follows:
 
@@ -1028,11 +1028,11 @@ db.user = loginname
 db.password = myPassword
 ```
 
-#### Configuring User Mode
+### Configuring User Mode
 
-Normally, user mode in OpenL Tablets WebStudio is set to **multi-user** by using OpenL Tablets WebStudio Installation Wizard as described in [Setting Up OpenL Tablets WebStudio with Installation Wizard](#setting-up-openl-tablets-webstudio-with-installation-wizard).
+Normally, user mode in OpenL Tablets WebStudio is set to **multi-user** by using OpenL Tablets WebStudio Installation Wizard as described in [Setting Up OpenL Tablets WebStudio with Installation Wizard](ONEONEONEsetting-up-openl-tablets-webstudio-with-installation-wizard).
 
-User mode can also be changed as a JVM option for Tomcat. For that, open the **Apache Tomcat Properties** dialog as described in [Installing Apache Tomcat Using Windows Service Installer](#installing-apache-tomcat-using-windows-service-installer), and in the **Java Options** text box, add the following line:
+User mode can also be changed as a JVM option for Tomcat. For that, open the **Apache Tomcat Properties** dialog as described in [Installing Apache Tomcat Using Windows Service Installer](ONEONEONEinstalling-apache-tomcat-using-windows-service-installer), and in the **Java Options** text box, add the following line:
 
 ```
 -Duser.mode=multi
@@ -1040,9 +1040,9 @@ User mode can also be changed as a JVM option for Tomcat. For that, open the **A
 
 **Note:** User mode set as a Java option takes precedence over the corresponding value specified in the OpenL Tablets WebStudio Installation Wizard. If both are defined, the Java option value is used.
 
-#### Configuring Google Analytics
+### Configuring Google Analytics
 
-Google Analytics is a service offered by Google that generates detailed statistics about website traffic and traffic sources. To configure Google Analytics for OpenL, open the **Apache Tomcat Properties** dialog as described in [Installing Apache Tomcat Using Windows Service Installer](#installing-apache-tomcat-using-windows-service-installer) and in the **Java Options** text box, add the following lines:
+Google Analytics is a service offered by Google that generates detailed statistics about website traffic and traffic sources. To configure Google Analytics for OpenL, open the **Apache Tomcat Properties** dialog as described in [Installing Apache Tomcat Using Windows Service Installer](ONEONEONEinstalling-apache-tomcat-using-windows-service-installer) and in the **Java Options** text box, add the following lines:
 
 ```
 webstudio.analytics=number 
@@ -1050,7 +1050,7 @@ webstudio.analytics=number
 
 `number` is a number provided by Google during registration.
 
-#### Configuring Private Key for Repository Security
+### Configuring Private Key for Repository Security
 
 OpenL Tablets WebStudio allows connecting to secured repositories. In this case, passwords are stored in OpenL Tablets WebStudio workspace. To improve passwords protection, a private key can be used.
 
@@ -1065,7 +1065,7 @@ The private key must be specified without spaces.
 !!! note
 	The private key must be configured prior to creating any secured connections. Otherwise, all stored passwords become invalid.
 
-## Deploy OpenL Tablets Rule Services under Apache Tomcat
+# Deploy OpenL Tablets Rule Services under Apache Tomcat
 
 This chapter is designed for rule developers who need to use business rules as separate web services.
 
@@ -1074,19 +1074,19 @@ For more information on how to configure OpenL Tablets Rule Services, see [OpenL
 Before deploying OpenL Tablets Rule Services under Apache Tomcat, ensure the following tasks are performed:
 
 -   The `JAVA_HOME` environment variable is set to the pathname of the directory where JDK is installed.
--   JVM options are set up as described in [Installing Apache Tomcat](#installing-apache-tomcat).
+-   JVM options are set up as described in [Installing Apache Tomcat](ONEONEONEinstalling-apache-tomcat).
 
 The folder where Tomcat is installed is referred to as `<TOMCAT_HOME>.`
 
 `This section contains the following topics:`
 
--   [Downloading Preconfigured OpenL Tablets Rule Services](#downloading-preconfigured-openl-tablets-rule-services)
--   [Configuring OpenL Tablets Rule Services for a Local Data Source](#configuring-openl-tablets-rule-services-for-a-local-data-source)
--   [Configuring OpenL Tablets Rule Services for a Database Data Source](#configuring-openl-tablets-rule-services-for-a-database-data-source)
--   [Configuring OpenL Tablets Rule Services via AWS S3 Connection](#configuring-openl-tablets-rule-services-via-aws-s3-connection)
--   [Configuring OpenL Tablets Rule Services via GIT Connection](#configuring-openl-tablets-rule-services-via-git-connection)
+-   [Downloading Preconfigured OpenL Tablets Rule Services](ONEONEONEdownloading-preconfigured-openl-tablets-rule-services)
+-   [Configuring OpenL Tablets Rule Services for a Local Data Source](ONEONEONEconfiguring-openl-tablets-rule-services-for-a-local-data-source)
+-   [Configuring OpenL Tablets Rule Services for a Database Data Source](ONEONEONEconfiguring-openl-tablets-rule-services-for-a-database-data-source)
+-   [Configuring OpenL Tablets Rule Services via AWS S3 Connection](ONEONEONEconfiguring-openl-tablets-rule-services-via-aws-s3-connection)
+-   [Configuring OpenL Tablets Rule Services via GIT Connection](ONEONEONEconfiguring-openl-tablets-rule-services-via-git-connection)
 
-### Downloading Preconfigured OpenL Tablets Rule Services
+## Downloading Preconfigured OpenL Tablets Rule Services
 
 To download the preconfigured OpenL Tablets Rule Services application in a WAR file, proceed as follows:
 
@@ -1094,15 +1094,15 @@ To download the preconfigured OpenL Tablets Rule Services application in a WAR f
 2.  Click the appropriate OpenL Tablets Rule Services WAR link.
 3.  Save the WAR file to the `<TOMCAT_HOME>\webapps` directory.
 
-### Configuring OpenL Tablets Rule Services for a Local Data Source
+## Configuring OpenL Tablets Rule Services for a Local Data Source
 
 This section describes how to configure settings for a local storage with deployed projects there. The following topics are included:
 
--   [Configuring OpenL Tablets Rule Services via Local File System](#configuring-openl-tablets-rule-services-via-local-file-system)
--   [Configuring OpenL Tablets Rule Services via Local ZIP Archives](#configuring-openl-tablets-rule-services-via-local-zip-archives)
--   [Configuring OpenL Tablets Rule Services via Classpath JAR](#configuring-openl-tablets-rule-services-via-classpath-jar)
+-   [Configuring OpenL Tablets Rule Services via Local File System](ONEONEONEconfiguring-openl-tablets-rule-services-via-local-file-system)
+-   [Configuring OpenL Tablets Rule Services via Local ZIP Archives](ONEONEONEconfiguring-openl-tablets-rule-services-via-local-zip-archives)
+-   [Configuring OpenL Tablets Rule Services via Classpath JAR](ONEONEONEconfiguring-openl-tablets-rule-services-via-classpath-jar)
 
-#### Configuring OpenL Tablets Rule Services via Local File System
+### Configuring OpenL Tablets Rule Services via Local File System
 
 Using a file system as a data source for user projects means that projects are stored in a local folder. This folder represents multi deployments containing one or multiple projects for each deployment. Each deployment must be represented as a separate folder and, at the same time, the project must also be represented as a separate folder inside the deployment folder.
 
@@ -1128,9 +1128,9 @@ To deploy OpenL Tablets Rule Services, configure a local file system as a data s
 To ensure the deployment is successful, try loading the appropriate CXF page with web services.  
 An example is <http://localhost:8080/openl-tablets-ws-X.X.X>`.`
 
-Users can also pack their rule projects in a `jar` file and use this file as a data source as described in [OpenL Tablets Rule Services Usage and Customization Guide > Classpath JAR](https://openldocs.readthedocs.io/en/latest/documentation/guides/rule_services_usage_and_customization_guide/#classpath-jar).
+Users can also pack their rule projects in a `jar` file and use this file as a data source as described in [OpenL Tablets Rule Services Usage and Customization Guide > Classpath JAR](https://openldocs.readthedocs.io/en/latest/documentation/guides/rule_services_usage_and_customization_guide/ONEONEONEclasspath-jar).
 
-#### Configuring OpenL Tablets Rule Services via Local ZIP Archives
+### Configuring OpenL Tablets Rule Services via Local ZIP Archives
 
 Using a local zip archive as a data source for user projects means that zipped projects are stored in a local folder. This folder represents rule project or deployment as a separate zip archive:
 
@@ -1155,7 +1155,7 @@ It is also possible to configure separate zip archives from different locations.
 
 `production-repository.archives = d:/datasource/project1.zip, c:/folder/project2.zip`
 
-#### Configuring OpenL Tablets Rule Services via Classpath JAR
+### Configuring OpenL Tablets Rule Services via Classpath JAR
 
 If rule projects with the `rules.xml` project descriptor in the archive root or deployments with the `deployment.xml` or `deployment.yaml` deployment descriptor in the archive root are packed into a JAR file and placed in the `classpath`, these projects are deployed at the application launch. It is default configuration.
 
@@ -1172,21 +1172,21 @@ To set up a classpath JAR for deploy to OpenL Tablets Rule Services, proceed as 
 
 Alternatively, zip archives with deployments or rule projects can be saved to `\<TOMCAT_HOME>\webapps\<rule services file name>\WEB-INF\classes\openl.`
 
-### Configuring OpenL Tablets Rule Services for a Database Data Source
+## Configuring OpenL Tablets Rule Services for a Database Data Source
 
 This section describes how to configure settings to connect to a database for storing deployed projects there. Such configuration requires that the appropriate database exists and is launched. The following topics are included:
 
--   [Configuring OpenL Tablets Rule Services via JDBC Connection](#configuring-openl-tablets-rule-services-via-jdbc-connection)
--   [Configuring OpenL Tablets Rule Services via JNDI Connection](#configuring-openl-tablets-rule-services-via-jndi-connection)
--   [Configuring OpenL Tablets Rule Services via AWS S3 Connection](#configuring-openl-tablets-rule-services-via-aws-s3-connection)
--   [Configuring OpenL Tablets Rule Services via GIT Connection](#configuring-openl-tablets-rule-services-via-git-connection)
--   [Configuring OpenL Tablets Rule Services via Azure Blob Connection](#configuring-openl-tablets-rule-services-via-azure-blob-connection)
+-   [Configuring OpenL Tablets Rule Services via JDBC Connection](ONEONEONEconfiguring-openl-tablets-rule-services-via-jdbc-connection)
+-   [Configuring OpenL Tablets Rule Services via JNDI Connection](ONEONEONEconfiguring-openl-tablets-rule-services-via-jndi-connection)
+-   [Configuring OpenL Tablets Rule Services via AWS S3 Connection](ONEONEONEconfiguring-openl-tablets-rule-services-via-aws-s3-connection)
+-   [Configuring OpenL Tablets Rule Services via GIT Connection](ONEONEONEconfiguring-openl-tablets-rule-services-via-git-connection)
+-   [Configuring OpenL Tablets Rule Services via Azure Blob Connection](ONEONEONEconfiguring-openl-tablets-rule-services-via-azure-blob-connection)
 
 Before configuration, add the appropriate driver library for a database in OpenL Tablets Rule Services to `\WEB-INF\lib\.`Alternatively, locate required libraries directly in `\<TOMCAT_HOME>\lib` with other Tomcat libraries. Install the database, defining a login and password and creating a new schema or service.
 
-For more information on drivers, see the **Driver name for appropriate databases** table in [Adding Drivers and Installing and Configuring the Database](#adding-drivers-and-installing-and-configuring-the-database).
+For more information on drivers, see the **Driver name for appropriate databases** table in [Adding Drivers and Installing and Configuring the Database](ONEONEONEadding-drivers-and-installing-and-configuring-the-database).
 
-#### Configuring OpenL Tablets Rule Services via JDBC Connection
+### Configuring OpenL Tablets Rule Services via JDBC Connection
 
 To set up JDBC connection settings for OpenL Tablets Rule Services, proceed as follows:
 
@@ -1198,14 +1198,14 @@ To set up JDBC connection settings for OpenL Tablets Rule Services, proceed as f
 	production-repository.uri = jdbc:mysql://localhost/deployment-repository
 	```
 
-1.  Set the URL value for `production-repository.uri` according to the appropriate database as described in the **URL value according to the database type** table in [Setting Up OpenL Tablets WebStudio with Installation Wizard](#setting-up-openl-tablets-webstudio-with-installation-wizard).
+1.  Set the URL value for `production-repository.uri` according to the appropriate database as described in the **URL value according to the database type** table in [Setting Up OpenL Tablets WebStudio with Installation Wizard](ONEONEONEsetting-up-openl-tablets-webstudio-with-installation-wizard).
 2.  Set the login `production-repository.login `and password `production-repository.password `for connection to the database defined while installing the database.
 
 	The password must be encoded via the Base64 encoding schema when `secret.key` is also defined.
 
-#### Configuring OpenL Tablets Rule Services via JNDI Connection
+### Configuring OpenL Tablets Rule Services via JNDI Connection
 
-This section describes how to configure JNDI connection when OpenL Tablets Rule Services is started under Apache Tomcat. Before configuration, ensure that resources are set up in the `context.xml` file as described in [Configuring Resources for JNDI Context](#configuring-resources-for-jndi-context).
+This section describes how to configure JNDI connection when OpenL Tablets Rule Services is started under Apache Tomcat. Before configuration, ensure that resources are set up in the `context.xml` file as described in [Configuring Resources for JNDI Context](ONEONEONEconfiguring-resources-for-jndi-context).
 
 To configure OpenL Tablets Rule Services via JNDI connection, proceed as follows:
 
@@ -1217,12 +1217,12 @@ To configure OpenL Tablets Rule Services via JNDI connection, proceed as follows
 	production-repository.uri = java:comp/env/jdbc/deploymentDB
 	```
 
-1.  Change the URL value for `production-repository.uri` according to the appropriate database as described in the **URL value according to the database type** table in [Setting Up OpenL Tablets WebStudio with Installation Wizard](#setting-up-openl-tablets-webstudio-with-installation-wizard).
+1.  Change the URL value for `production-repository.uri` according to the appropriate database as described in the **URL value according to the database type** table in [Setting Up OpenL Tablets WebStudio with Installation Wizard](ONEONEONEsetting-up-openl-tablets-webstudio-with-installation-wizard).
 
     !!! note
 	` `Login and password are not required for definition inside the `application.properties` file while configuring JNDI settings.
 
-### Configuring OpenL Tablets Rule Services via AWS S3 Connection
+## Configuring OpenL Tablets Rule Services via AWS S3 Connection
 
 This section describes how to configure an AWS S3 connection when OpenL Tablets Rule Services is started under Apache Tomcat.
 
@@ -1236,7 +1236,7 @@ production-repository.access-key = yourAccessKey
 production-repository.secret-key = yourSecretKey
 ```
 
-### Configuring OpenL Tablets Rule Services via GIT Connection
+## Configuring OpenL Tablets Rule Services via GIT Connection
 
 To configure OpenL Tablets Rule Services via a GIT connection, add the following properties to the application.properties file:
 
@@ -1247,7 +1247,7 @@ production-repository.login = your-login
 production-repository.password = your-password
 ```
 
-### Configuring OpenL Tablets Rule Services via Azure Blob Connection
+## Configuring OpenL Tablets Rule Services via Azure Blob Connection
 
 To configure OpenL Tablets Rule Services via the Azure Blob connection using SAS, add the following properties to the application.properties file:
 
@@ -1256,18 +1256,18 @@ production-repository.factory=repo-azure-blob
 production-repository.uri=https://myStorage.blob.core.windows.net/container/?sv=2015-07-08
 ```
 
-## Install OpenL Tablets WebStudio and OpenL Tablets Rule Services on JBoss Application Server
+# Install OpenL Tablets WebStudio and OpenL Tablets Rule Services on JBoss Application Server
 
 This section explains how to install OpenL Tablets WebStudio and OpenL Tablets Rule Services on JBoss Application Server in a standalone mode.
 
 The following topics are included:
 
--   [Deploying OpenL Tablets WebStudio on JBoss Application Server](#deploying-openl-tablets-webstudio-on-jboss-application-server)
--   [Deploying OpenL Tablets Rule Services on JBoss Application Server](#deploying-openl-tablets-rule-services-on-jboss-application-server)
--   [Setting Up a JDBC Connection](#setting-up-a-jdbc-connection)
--   [Setting Up a JNDI Connection](#setting-up-a-jndi-connection)
+-   [Deploying OpenL Tablets WebStudio on JBoss Application Server](ONEONEONEdeploying-openl-tablets-webstudio-on-jboss-application-server)
+-   [Deploying OpenL Tablets Rule Services on JBoss Application Server](ONEONEONEdeploying-openl-tablets-rule-services-on-jboss-application-server)
+-   [Setting Up a JDBC Connection](ONEONEONEsetting-up-a-jdbc-connection)
+-   [Setting Up a JNDI Connection](ONEONEONEsetting-up-a-jndi-connection)
 
-### Deploying OpenL Tablets WebStudio on JBoss Application Server
+## Deploying OpenL Tablets WebStudio on JBoss Application Server
 
 To deploy OpenL Tablets WebStudio on JBoss Application Server, proceed as follows:
 
@@ -1280,7 +1280,7 @@ To deploy OpenL Tablets WebStudio on JBoss Application Server, proceed as follow
 1.  The **Welcome to OpenL Tablets WebStudio Installation Wizard** window.
 2.  Set up the application as required.
 
-### Deploying OpenL Tablets Rule Services on JBoss Application Server
+## Deploying OpenL Tablets Rule Services on JBoss Application Server
 
 To deploy OpenL Tablets Rule Services on JBoss Application Server, proceed as follows:
 
@@ -1290,7 +1290,7 @@ To deploy OpenL Tablets Rule Services on JBoss Application Server, proceed as fo
 4.  Verify that the `webservice.war.deployed` marker is generated.
 5.  To run OpenL Tablets Rule Services, in a browser, enter *http://localhost:8080/webservice/*.
 
-### Setting Up a JDBC Connection
+## Setting Up a JDBC Connection
 
 To set up a JDBC connection for OpenL Tablets WebStudio, proceed as follows:
 
@@ -1324,9 +1324,9 @@ To set up a JDBC connection for OpenL Tablets WebStudio, proceed as follows:
 
 	For example, if the `application.properties` file is located in JBoss home directory, JBoss must be run from this directory via the `bin\standalone.bat` command.
 
-1.  Configure a JDBC connection for OpenL Tablets WebStudio as described in [Configuring OpenL Tablets WebStudio via JDBC Connection](#configuring-openl-tablets-webstudio-via-jdbc-connection).
+1.  Configure a JDBC connection for OpenL Tablets WebStudio as described in [Configuring OpenL Tablets WebStudio via JDBC Connection](ONEONEONEconfiguring-openl-tablets-webstudio-via-jdbc-connection).
 
-### Setting Up a JNDI Connection
+## Setting Up a JNDI Connection
 
 To set up a JNDI connection settings for OpenL Tablets WebStudio, proceed as follows:
 
@@ -1360,16 +1360,16 @@ To set up a JNDI connection settings for OpenL Tablets WebStudio, proceed as fol
 
 	`production-repository.uri = <JNDI Name>`
 
-1.  Configure a JNDI connection for OpenL Tablets WebStudio as described in [Configuring Settings in OpenL Tablets WebStudio](#configuring-settings-in-openl-tablets-webstudio).
+1.  Configure a JNDI connection for OpenL Tablets WebStudio as described in [Configuring Settings in OpenL Tablets WebStudio](ONEONEONEconfiguring-settings-in-openl-tablets-webstudio).
 
-## OpenL Tablets WebStudio and Rule Services Integration
+# OpenL Tablets WebStudio and Rule Services Integration
 
 This section describes how to set up OpenL Tablets WebStudio and OpenL Tablets Rule Services integration and enable backward compatibility and includes the following topics:
 
--   [Deploying Rules to the Production Server](#deploying-rules-to-the-production-server)
--   [Integrating OpenL Tablets WebStudio and OpenL Tablets Rule Services via Database Repository](#integrating-openl-tablets-webstudio-and-openl-tablets-rule-services-via-database-repository)
+-   [Deploying Rules to the Production Server](ONEONEONEdeploying-rules-to-the-production-server)
+-   [Integrating OpenL Tablets WebStudio and OpenL Tablets Rule Services via Database Repository](ONEONEONEintegrating-openl-tablets-webstudio-and-openl-tablets-rule-services-via-database-repository)
 
-### Deploying Rules to the Production Server
+## Deploying Rules to the Production Server
 
 After integration any changes can be made in user’s rule in OpenL Tablets WebStudio, and then the project must be saved and redeployed. These changes immediately affect the rule represented as web service. During development, rules are stored in the file system of the development server. When development is finished, rules can be deployed to the production server as follows:
 
@@ -1383,15 +1383,15 @@ After integration any changes can be made in user’s rule in OpenL Tablets WebS
 
 	*OpenL Tablets WebStudio and OpenL Tablets Rule Services deployment*
 
-### Integrating OpenL Tablets WebStudio and OpenL Tablets Rule Services via Database Repository
+## Integrating OpenL Tablets WebStudio and OpenL Tablets Rule Services via Database Repository
 
 This section describes an alternative way of how to set up an integrated environment that enables work with business rules from OpenL Tablets WebStudio and launch these rules as OpenL Tablets Rule Services. To set up OpenL Tablets WebStudio and OpenL Tablets Rule Services integration using the database as storage for deployment repository, proceed as follows:
 
 1.  Install OpenL Tablets WebStudio and OpenL Tablets Rule Services on the same application server.
-2.  Connect OpenL Tablets WebStudio to the database to store deployed projects as described in [Setting Up OpenL Tablets WebStudio with Installation Wizard](#setting-up-openl-tablets-webstudio-with-installation-wizard).
-3.  Configure OpenL Tablets Rule Services for a database data source as described in [Configuring OpenL Tablets Rule Services for a Database Data Source](#configuring-openl-tablets-rule-services-for-a-database-data-source).
+2.  Connect OpenL Tablets WebStudio to the database to store deployed projects as described in [Setting Up OpenL Tablets WebStudio with Installation Wizard](ONEONEONEsetting-up-openl-tablets-webstudio-with-installation-wizard).
+3.  Configure OpenL Tablets Rule Services for a database data source as described in [Configuring OpenL Tablets Rule Services for a Database Data Source](ONEONEONEconfiguring-openl-tablets-rule-services-for-a-database-data-source).
 
-## Troubleshooting
+# Troubleshooting
 
 If OpenL Tablets WebStudio is deployed under Tomcat in the Unix/Linux environment, consider the following troubleshooting recommendations:
 
@@ -1429,18 +1429,18 @@ If OpenL Tablets WebStudio is deployed under Tomcat in the Unix/Linux environmen
 
 	`<TOMCAT_HOME>/bin/startup.sh`
 
-## Frequently Asked Questions
+# Frequently Asked Questions
 
 This section provides the most common questions and answers related to the OpenL Tablets installation procedure. For more information on working with Java, Tomcat, and other third party software, see the corresponding sites of the software manufacturers.
 
-| \#    | Question                                                                                                                         | Answer                                                                                                                                                                                                                                                                                                                                   |
+| \ONEONEONE    | Question                                                                                                                         | Answer                                                                                                                                                                                                                                                                                                                                   |
 |-------|----------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **1** | How can I check if Java is installed on my PC?                                                                                   | Proceed as follows: <br/>Open **Start \> Control Panel.** <br/>Perform either of the following: <br/>• For Windows XP, double click **Add or Remove Programs**. <br/>• For Windows 7/Vista, click **Programs \> Programs and Features**. <br/>Look through the list for **Java(TM)…** or **Java(TM) Update…** items. <br/>If any is present, Java is installed on your PC. |
 | **2** | During Java installation, the page for Java registration appears. <br/>Do I have to register Java?                                    | No, it is optional. You can close the registration page.                                                                                                                                                                                                                                                                                 |
 | 3     | How can I check which version of Java is installed on my PC?                                                                     | Open the [**Verify Java Version**](http://java.com/en/download/installed.jsp) page and click the **Verify Java Version** button.  <br/>In a few seconds a new page appears where you will find the message like the following one: <br/>**Your Java version: Version 6 Update 26**.                                                                |
 | 4     | How can I see the error message in the Tomcat <br/>console that appears when I start Tomcat? <br/>The error screen disappears too quickly. | Proceed as follows: <br/>Click **Start \> Run**. <br/>Locate the `<TOMCAT_HOME>\bin` folder. <br/>Select `catalina.bat` and enter *run* in the command line.                                                                                                                                                                                            |
 
-## Appendix A: Official Docker Images for OpenL Tablets
+# Appendix A: Official Docker Images for OpenL Tablets
 
 OpenL Tablets supports Docker containers. The following table provides links to the Docker images for OpenL Tablets:
 
@@ -1450,7 +1450,7 @@ OpenL Tablets supports Docker containers. The following table provides links to 
 | OpenL Tablets WebStudio     | <https://hub.docker.com/r/openltablets/webstudio/> |
 | OpenL Tablets demo          | <https://hub.docker.com/r/openltablets/demo/>      |
 
-## Appendix B: OpenL Tablets WebStudio Image Configuration for SAML Under Kubernetes
+# Appendix B: OpenL Tablets WebStudio Image Configuration for SAML Under Kubernetes
 
 ```
 apiVersion: apps/v1
@@ -1523,6 +1523,6 @@ spec:
         - name: regcreds
 ```
 
-## Appendix C: CORS Filter Support Enablement in <br/>OpenL Tablets WebStudio
+# Appendix C: CORS Filter Support Enablement in <br/>OpenL Tablets WebStudio
 
-**Cross-Origin Resource Sharing (CORS)** is a specification which is a standard mechanism that enables cross-origin requests. For more information on how to enable CORS filter support in OpenL Tablets WebStudio, see [OpenL Tablets Rule Services Usage and Customization Guide > CORS Filter Support](https://openldocs.readthedocs.io/en/latest/documentation/guides/rule_services_usage_and_customization_guide/#cors-filter-support).
+**Cross-Origin Resource Sharing (CORS)** is a specification which is a standard mechanism that enables cross-origin requests. For more information on how to enable CORS filter support in OpenL Tablets WebStudio, see [OpenL Tablets Rule Services Usage and Customization Guide > CORS Filter Support](https://openldocs.readthedocs.io/en/latest/documentation/guides/rule_services_usage_and_customization_guide/ONEONEONEcors-filter-support).
