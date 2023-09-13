@@ -1,4 +1,4 @@
-<font size="7">OpenL Tablets BRMS Installation Guide</font>
+<p style="font-size:20px;font-weight: bold;">OpenL Tablets BRMS Installation Guide</p>
 
 ```
 Release 5.26
