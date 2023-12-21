@@ -1965,7 +1965,7 @@ In OpenL Tablets, **custom spreadsheet type** is used by default. To enable supp
 
 ## Appendix G: Deployment Project ZIP Structure
 
-Deployment projects described in this section can be built via **OpenL Maven Plugin** or archived manually. The following topics are included:
+Deployment projects described in this section can be built via **OpenL Maven Plugin** or archived manually. OpenL projects without Excel files inside are supported. The following topics are included:
 
 -   [Single Project Deployment Structure](#single-project-deployment-structure)
 -   [Multiple Projects Deployment Structure](#multiple-projects-deployment-structure)
